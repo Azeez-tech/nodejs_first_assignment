@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Dell XPS 13",
+    "price": 1200,
+    "size": "13 inches"
+  },
+  {
+    "id": 2,
+    "name": "Apple MacBook Pro",
+    "price": 2000,
+    "size": "16 inches"
+  },
+  {
+    "id": 3,
+    "name": "HP Spectre x360",
+    "price": 1500,
+    "size": "13.3 inches"
+  },
+  {
+    "id": 4,
+    "name": "Lenovo ThinkPad X1 Carbon",
+    "price": 1800,
+    "size": "14 inches"
+  },
+  {
+    "id": 5,
+    "name": "Asus ZenBook Duo",
+    "price": 2000,
+    "size": "14 inches"
+  },
+  {
+    "id": 6,
+    "name": "Microsoft Surface Laptop 4",
+    "price": 1400,
+    "size": "15 inches"
+  },
+  {
+    "id": 7,
+    "name": "Acer Swift 3",
+    "price": 800,
+    "size": "14 inches"
+  },
+  {
+    "id": 8,
+    "name": "Razer Blade 15",
+    "price": 2800,
+    "size": "15.6 inches"
+  },
+  {
+    "id": 9,
+    "name": "LG Gram 17",
+    "price": 1700,
+    "size": "17 inches"
+  },
+  {
+    "id": 10,
+    "name": "Samsung Galaxy Book Flex",
+    "price": 1300,
+    "size": "13.3 inches"
+  }
+]
