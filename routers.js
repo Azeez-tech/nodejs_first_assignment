@@ -1,5 +1,3 @@
-
-const { error } = require('console');
 const fs = require('fs');
 const path = require('path');
 const DBLaptopsFile = path.join(__dirname, 'DBLaptops', 'laptops.json');
