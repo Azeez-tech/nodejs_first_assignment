@@ -24,7 +24,7 @@ function requestHandler (req, res) {
     deleteLaptop(req, res);
   } else {
     res.writeHead(404);
-    res.end(JSON.stringify("No such URL Found"));
+    res.end(JSON.stringify({message: "No such URL Found"}));
   }
 }
 

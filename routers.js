@@ -6,7 +6,7 @@ const DBLaptopsFile = path.join(__dirname, 'DBLaptops', 'laptops.json');
   fs.readFile(DBLaptopsFile, 'utf8', (error, data) => {
     if (error) {
       res.writeHead(500);
-      res.end(JSON.stringify('server error'));
+      res.end(JSON.stringify({message: 'Server error'}));
       return;
     }
     res.end(data);
@@ -17,7 +17,7 @@ const DBLaptopsFile = path.join(__dirname, 'DBLaptops', 'laptops.json');
   fs.readFile(DBLaptopsFile, 'utf8', (error, data) => {
     if (error) {
       res.writeHead(500);
-      res.end(JSON.stringify('server error'));
+      res.end(JSON.stringify({message: 'Server error'}));
       return;
     }
     const laptops = JSON.parse(data);
@@ -25,7 +25,7 @@ const DBLaptopsFile = path.join(__dirname, 'DBLaptops', 'laptops.json');
     const laptop = laptops.find(laptop => laptop.id === parseInt(id, 10));
     if (!laptop) {
       res.writeHead(404);
-      res.end(JSON.stringify('No Laptop Found'));
+      res.end(JSON.stringify({message: 'No Laptop Found'}));
     }
     res.end(JSON.stringify(laptop));
   
@@ -44,7 +44,7 @@ const DBLaptopsFile = path.join(__dirname, 'DBLaptops', 'laptops.json');
     fs.readFile(DBLaptopsFile, 'utf8', (error, data) => {
       if (error) {
         res.writeHead(500);
-        res.end(JSON.stringify('Server Error'));
+        res.end(JSON.stringify({message: 'Server Error'}));
         return;
       }
       const oldlaptops =JSON.parse(data);
@@ -56,7 +56,7 @@ const DBLaptopsFile = path.join(__dirname, 'DBLaptops', 'laptops.json');
       fs.writeFile(DBLaptopsFile, JSON.stringify(allLaptops), (error) => {
         if (error) {
           res.writeHead(500);
-          res.end(JSON.stringify('Server Error'));
+          res.end(JSON.stringify({message: 'Server Error'}));
           return;
         }
         res.writeHead(200);
@@ -79,14 +79,14 @@ const DBLaptopsFile = path.join(__dirname, 'DBLaptops', 'laptops.json');
     fs.readFile(DBLaptopsFile, 'utf8', (error, data) => {
       if (error) {
         res.writeHead(500);
-        res.end(JSON.stringify('Server Error'));
+        res.end(JSON.stringify({message: 'Server Error'}));
         return;
       }
       const allLaptops = JSON.parse(data);
       laptopsIndex = allLaptops.findIndex(laptop => laptop.id === laptopToUpdate.id);
       if (laptopsIndex === -1) {
         res.writeHead(404);
-        res.end(JSON.stringify('No Laptop with the specified ID found'));
+        res.end(JSON.stringify({message: 'No Laptop with the specified ID found'}));
         return;
       }
       allLaptops[laptopsIndex] = {...allLaptops[laptopsIndex], ...laptopToUpdate};
@@ -94,7 +94,7 @@ const DBLaptopsFile = path.join(__dirname, 'DBLaptops', 'laptops.json');
       fs.writeFile(DBLaptopsFile, JSON.stringify(allLaptops), (error) => {
         if (error) {
           res.writeHead(500);
-          res.end(JSON.stringify('Server Error'));
+          res.end(JSON.stringify({message: 'Server Error'}));
           return;
         }
         res.end(JSON.stringify('Laptop Updated Successfully'));
@@ -117,14 +117,14 @@ function deleteLaptop (req, res) {
     fs.readFile(DBLaptopsFile, 'utf8', (error, data) => {
       if (error) {
         res.writeHead(500);
-        res.end(JSON.stringify('Server Error'));
+        res.end(JSON.stringify({message: 'Server Error'}));
         return;
       }
       const allLaptops = JSON.parse(data);
       const laptopsIndex = allLaptops.findIndex(laptop => laptop.id === laptopToDelete.id);
       if (laptopsIndex === - 1) {
         res.writeHead(404);
-        res.end(JSON.stringify('No Laptop with the specified ID Found'));
+        res.end(JSON.stringify({message: 'No Laptop with the specified ID Found'}));
         return;
       }
       allLaptops.splice(laptopsIndex, 1);
@@ -132,7 +132,7 @@ function deleteLaptop (req, res) {
       fs.writeFile(DBLaptopsFile, JSON.stringify(allLaptops), (error) => {
         if (error) {
           res.writeHead(500);
-          res.end(JSON.stringify('Server Error'));
+          res.end(JSON.stringify({message: 'Server Error'}));
           return;
         }
         res.end(JSON.stringify('Laptop Deletion Successful'));
